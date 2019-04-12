@@ -23,9 +23,9 @@ array<array<double,nx>,3> set_initial_conditions(double rhoL, double rhoR,
   // if left of middle use left values
   // if right of middle use right values
   for(int i=0; i<nx; i++){
-    primitive[0][i] = 0;//IMPLEMENT ME
-    primitive[1][i] = 0;//IMPLEMENT ME
-    primitive[2][i] = 0;//IMPLEMENT ME
+    primitive[0][i] = (i<nx/2 ? rhoL : rhoR);//IMPLEMENT ME
+    primitive[1][i] = (i<nx/2 ? vxL : vxR);//IMPLEMENT ME
+    primitive[2][i] = (i<nx/2 ? pressL : pressR);//IMPLEMENT ME
   }
 
   return primitive;
